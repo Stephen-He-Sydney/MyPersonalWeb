@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
 using PersonalDemo.Repository;
+using PersonalDemo.Data.Domain;
 using PersonalDemo.Data;
 
 namespace PersonalDemo.Service.Skills
@@ -13,13 +14,9 @@ namespace PersonalDemo.Service.Skills
     {
         private IRepository<Skill> _skillRepository;
 
-        public SkillService()
+        public SkillService(IRepository<Skill> skillRepository)
         {
-        }
-
-        public SkillService(PersonalDemoContext dbContext)
-        {
-            //_skillRepository = new EFRepository<Skill>(dbContext);
+            _skillRepository = skillRepository;
         }
 
         public IQueryable<Skill> GetAll()

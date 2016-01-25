@@ -4,7 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using PersonalDemo.Data;
+using PersonalDemo.Data.Domain;
 using PersonalDemo.Service.WorkExps;
 using PersonalDemo.Web.Models.WorkExp;
 

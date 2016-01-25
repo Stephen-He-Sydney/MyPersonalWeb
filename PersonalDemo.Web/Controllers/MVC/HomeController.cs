@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Data.Entity;
 using PersonalDemo.Service.Profiles;
-using PersonalDemo.Data;
+using PersonalDemo.Data.Domain;
 using PersonalDemo.Web.Models.Contact;
 
 namespace PersonalDemo.Web.Controllers.MVC

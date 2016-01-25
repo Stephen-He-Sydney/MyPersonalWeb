@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
 using PersonalDemo.Repository;
-using PersonalDemo.Data;
+using PersonalDemo.Data.Domain;
 
 namespace PersonalDemo.Service.Projects
 {

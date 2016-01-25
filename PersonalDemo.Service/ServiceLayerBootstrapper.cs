@@ -12,7 +12,9 @@ using PersonalDemo.Service.Skills;
 using PersonalDemo.Service.Educations;
 using PersonalDemo.Service.WorkExps;
 using PersonalDemo.Repository;
+using PersonalDemo.Data.Domain;
 using PersonalDemo.Data;
+
 
 namespace PersonalDemo.Service
 {

@@ -50,85 +50,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Achievement.cs">
-      <DependentUpon>PersonalDemoModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Contact.cs">
-      <DependentUpon>PersonalDemoModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Education.cs">
-      <DependentUpon>PersonalDemoModel.tt</DependentUpon>
-    </Compile>
+    <Compile Include="Domain\Achievement.cs" />
+    <Compile Include="Domain\Contact.cs" />
+    <Compile Include="Domain\Education.cs" />
+    <Compile Include="Domain\Portfolio.cs" />
+    <Compile Include="Domain\PositionDuty.cs" />
+    <Compile Include="Domain\Profile.cs" />
+    <Compile Include="Domain\Project.cs" />
+    <Compile Include="Domain\ProjectDuty.cs" />
+    <Compile Include="Domain\ProjectTechnique.cs" />
+    <Compile Include="Domain\Referee.cs" />
+    <Compile Include="Domain\Skill.cs" />
+    <Compile Include="Domain\SkillSummary.cs" />
+    <Compile Include="Domain\WorkExp.cs" />
     <Compile Include="EnumTypes\ProjectType.cs" />
-    <Compile Include="PersonalDemoModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PersonalDemoModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="PersonalDemoModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PersonalDemoModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="PersonalDemoModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PersonalDemoModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Portfolio.cs">
-      <DependentUpon>PersonalDemoModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="PositionDuty.cs">
-      <DependentUpon>PersonalDemoModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Profile.cs">
-      <DependentUpon>PersonalDemoModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Project.cs">
-      <DependentUpon>PersonalDemoModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ProjectDuty.cs">
-      <DependentUpon>PersonalDemoModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ProjectTechnique.cs">
-      <DependentUpon>PersonalDemoModel.tt</DependentUpon>
-    </Compile>
+    <Compile Include="PersonalDemoContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Referee.cs">
-      <DependentUpon>PersonalDemoModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Skill.cs">
-      <DependentUpon>PersonalDemoModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="SkillSummary.cs">
-      <DependentUpon>PersonalDemoModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="WorkExp.cs">
-      <DependentUpon>PersonalDemoModel.tt</DependentUpon>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <EntityDeploy Include="PersonalDemoModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>PersonalDemoModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
     <None Include="packages.config" />
-    <None Include="PersonalDemoModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>PersonalDemoModel.edmx</DependentUpon>
-      <LastGenOutput>PersonalDemoModel.Context.cs</LastGenOutput>
-    </None>
-    <None Include="PersonalDemoModel.edmx.diagram">
-      <DependentUpon>PersonalDemoModel.edmx</DependentUpon>
-    </None>
-    <None Include="PersonalDemoModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>PersonalDemoModel.edmx</DependentUpon>
-      <LastGenOutput>PersonalDemoModel.cs</LastGenOutput>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

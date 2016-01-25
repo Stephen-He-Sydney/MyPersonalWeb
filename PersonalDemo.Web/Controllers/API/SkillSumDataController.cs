@@ -5,7 +5,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using PersonalDemo.Service.Skills;
-using PersonalDemo.Data;
+using PersonalDemo.Data.Domain;
 
 namespace PersonalDemo.Web.Controllers.API
 {

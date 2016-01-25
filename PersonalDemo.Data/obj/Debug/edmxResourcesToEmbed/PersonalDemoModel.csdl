@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PersonalDemoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Achievement">
+    <Key>
+      <PropertyRef Name="AchievementID" />
+    </Key>
+    <Property Name="AchievementID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ListItem" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="WorkExpID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="WorkExp" Relationship="Self.FK_Achievement_WorkExp" FromRole="Achievement" ToRole="WorkExp" />
+  </EntityType>
+  <EntityType Name="Contact">
+    <Key>
+      <PropertyRef Name="ContactID" />
+    </Key>
+    <Property Name="ContactID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ContactNo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Website" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Education">
+    <Key>
+      <PropertyRef Name="EducationID" />
+    </Key>
+    <Property Name="EducationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CollegeName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Degree" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="EndDate" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="Portfolio">
+    <Key>
+      <PropertyRef Name="PortfolioID" />
+    </Key>
+    <Property Name="PortfolioID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ImageUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="Project">
+    <Key>
+      <PropertyRef Name="ProjectID" />
+    </Key>
+    <Property Name="ProjectID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Purpose" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Language" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DevelopmentTool" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ProjectTypeID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="ProjectDuties" Relationship="Self.FK_ProjectDuty_Project" FromRole="Project" ToRole="ProjectDuty" />
+    <NavigationProperty Name="ProjectTechniques" Relationship="Self.FK_ProjectTechnique_Project" FromRole="Project" ToRole="ProjectTechnique" />
+  </EntityType>
+  <EntityType Name="ProjectDuty">
+    <Key>
+      <PropertyRef Name="ProjectDutyID" />
+    </Key>
+    <Property Name="ProjectDutyID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ListItem" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ProjectID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Project" Relationship="Self.FK_ProjectDuty_Project" FromRole="ProjectDuty" ToRole="Project" />
+  </EntityType>
+  <EntityType Name="ProjectTechnique">
+    <Key>
+      <PropertyRef Name="ProjectTechniqueID" />
+    </Key>
+    <Property Name="ProjectTechniqueID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ListItem" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ProjectID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Project" Relationship="Self.FK_ProjectTechnique_Project" FromRole="ProjectTechnique" ToRole="Project" />
+  </EntityType>
+  <EntityType Name="SkillSummary">
+    <Key>
+      <PropertyRef Name="SkillSummaryID" />
+    </Key>
+    <Property Name="SkillSummaryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SkillStatement" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WorkExp">
+    <Key>
+      <PropertyRef Name="WorkExpID" />
+    </Key>
+    <Property Name="WorkExpID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="EndDate" Type="DateTime" Precision="3" />
+    <Property Name="CorpName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Location" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Position" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Achievements" Relationship="Self.FK_Achievement_WorkExp" FromRole="WorkExp" ToRole="Achievement" />
+    <NavigationProperty Name="PositionDuties" Relationship="PersonalDemoModel.FK_JobDuty_WorkExp" FromRole="WorkExp" ToRole="PositionDuty" />
+  </EntityType>
+  <Association Name="FK_Achievement_WorkExp">
+    <End Role="WorkExp" Type="Self.WorkExp" Multiplicity="1" />
+    <End Role="Achievement" Type="Self.Achievement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkExp">
+        <PropertyRef Name="WorkExpID" />
+      </Principal>
+      <Dependent Role="Achievement">
+        <PropertyRef Name="WorkExpID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProjectDuty_Project">
+    <End Role="Project" Type="Self.Project" Multiplicity="1" />
+    <End Role="ProjectDuty" Type="Self.ProjectDuty" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Project">
+        <PropertyRef Name="ProjectID" />
+      </Principal>
+      <Dependent Role="ProjectDuty">
+        <PropertyRef Name="ProjectID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProjectTechnique_Project">
+    <End Role="Project" Type="Self.Project" Multiplicity="1" />
+    <End Role="ProjectTechnique" Type="Self.ProjectTechnique" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Project">
+        <PropertyRef Name="ProjectID" />
+      </Principal>
+      <Dependent Role="ProjectTechnique">
+        <PropertyRef Name="ProjectID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="PersonalDemoContext" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Achievements" EntityType="Self.Achievement" />
+    <EntitySet Name="Contacts" EntityType="Self.Contact" />
+    <EntitySet Name="Educations" EntityType="Self.Education" />
+    <EntitySet Name="Portfolios" EntityType="Self.Portfolio" />
+    <EntitySet Name="Projects" EntityType="Self.Project" />
+    <EntitySet Name="ProjectDuties" EntityType="Self.ProjectDuty" />
+    <EntitySet Name="ProjectTechniques" EntityType="Self.ProjectTechnique" />
+    <EntitySet Name="SkillSummaries" EntityType="Self.SkillSummary" />
+    <EntitySet Name="WorkExps" EntityType="Self.WorkExp" />
+    <AssociationSet Name="FK_Achievement_WorkExp" Association="Self.FK_Achievement_WorkExp">
+      <End Role="WorkExp" EntitySet="WorkExps" />
+      <End Role="Achievement" EntitySet="Achievements" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProjectDuty_Project" Association="Self.FK_ProjectDuty_Project">
+      <End Role="Project" EntitySet="Projects" />
+      <End Role="ProjectDuty" EntitySet="ProjectDuties" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProjectTechnique_Project" Association="Self.FK_ProjectTechnique_Project">
+      <End Role="Project" EntitySet="Projects" />
+      <End Role="ProjectTechnique" EntitySet="ProjectTechniques" />
+    </AssociationSet>
+    <EntitySet Name="Referees" EntityType="PersonalDemoModel.Referee" />
+    <EntitySet Name="Skills" EntityType="PersonalDemoModel.Skill" />
+    <EntitySet Name="PositionDuties" EntityType="PersonalDemoModel.PositionDuty" />
+    <AssociationSet Name="FK_JobDuty_WorkExp" Association="PersonalDemoModel.FK_JobDuty_WorkExp">
+      <End Role="WorkExp" EntitySet="WorkExps" />
+      <End Role="PositionDuty" EntitySet="PositionDuties" />
+    </AssociationSet>
+    <EntitySet Name="Profiles" EntityType="PersonalDemoModel.Profile" />
+  </EntityContainer>
+  <EntityType Name="Referee">
+    <Key>
+      <PropertyRef Name="RefereeID" />
+    </Key>
+    <Property Name="RefereeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Comment" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RefereeName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Skill">
+    <Key>
+      <PropertyRef Name="SkillID" />
+    </Key>
+    <Property Name="SkillID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Rate" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="SkillLevel" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="PositionDuty">
+    <Key>
+      <PropertyRef Name="JobDutyID" />
+    </Key>
+    <Property Name="JobDutyID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ListItem" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="WorkExpID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="WorkExp" Relationship="PersonalDemoModel.FK_JobDuty_WorkExp" FromRole="PositionDuty" ToRole="WorkExp" />
+  </EntityType>
+  <Association Name="FK_JobDuty_WorkExp">
+    <End Type="PersonalDemoModel.WorkExp" Role="WorkExp" Multiplicity="1" />
+    <End Type="PersonalDemoModel.PositionDuty" Role="PositionDuty" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkExp">
+        <PropertyRef Name="WorkExpID" />
+      </Principal>
+      <Dependent Role="PositionDuty">
+        <PropertyRef Name="WorkExpID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Profile">
+    <Key>
+      <PropertyRef Name="ProfileID" />
+    </Key>
+    <Property Name="ProfileID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Degree" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Birth" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Phone" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="CareerObjective" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="VisaStatus" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Occupation" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="EnglishLevel" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Certificate" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Street" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Suburb" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="State" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Country" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PersonalDemoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Achievement">
+    <Key>
+      <PropertyRef Name="AchievementID" />
+    </Key>
+    <Property Name="AchievementID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ListItem" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="WorkExpID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Contact">
+    <Key>
+      <PropertyRef Name="ContactID" />
+    </Key>
+    <Property Name="ContactID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Comment" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ContactNo" Type="nvarchar" MaxLength="100" />
+    <Property Name="Website" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Education">
+    <Key>
+      <PropertyRef Name="EducationID" />
+    </Key>
+    <Property Name="EducationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CollegeName" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="Degree" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="StartDate" Type="datetime" Nullable="false" />
+    <Property Name="EndDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Portfolio">
+    <Key>
+      <PropertyRef Name="PortfolioID" />
+    </Key>
+    <Property Name="PortfolioID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="100" />
+    <Property Name="ImageUrl" Type="nvarchar(max)" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PositionDuty">
+    <Key>
+      <PropertyRef Name="JobDutyID" />
+    </Key>
+    <Property Name="JobDutyID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ListItem" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="WorkExpID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Profile">
+    <Key>
+      <PropertyRef Name="ProfileID" />
+    </Key>
+    <Property Name="ProfileID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="Degree" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="Birth" Type="datetime" Nullable="false" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="CareerObjective" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="VisaStatus" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="Occupation" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="EnglishLevel" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="Certificate" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="Street" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="Suburb" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="State" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="Country" Type="nvarchar" MaxLength="200" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Project">
+    <Key>
+      <PropertyRef Name="ProjectID" />
+    </Key>
+    <Property Name="ProjectID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Purpose" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="Language" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DevelopmentTool" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ProjectTypeID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProjectDuty">
+    <Key>
+      <PropertyRef Name="ProjectDutyID" />
+    </Key>
+    <Property Name="ProjectDutyID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ListItem" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="ProjectID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProjectTechnique">
+    <Key>
+      <PropertyRef Name="ProjectTechniqueID" />
+    </Key>
+    <Property Name="ProjectTechniqueID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ListItem" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="ProjectID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Referee">
+    <Key>
+      <PropertyRef Name="RefereeID" />
+    </Key>
+    <Property Name="RefereeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Comment" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="RefereeName" Type="nvarchar" MaxLength="200" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Skill">
+    <Key>
+      <PropertyRef Name="SkillID" />
+    </Key>
+    <Property Name="SkillID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="Rate" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="SkillLevel" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SkillSummary">
+    <Key>
+      <PropertyRef Name="SkillSummaryID" />
+    </Key>
+    <Property Name="SkillSummaryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SkillStatement" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WorkExp">
+    <Key>
+      <PropertyRef Name="WorkExpID" />
+    </Key>
+    <Property Name="WorkExpID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StartDate" Type="datetime" Nullable="false" />
+    <Property Name="EndDate" Type="datetime" />
+    <Property Name="CorpName" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="Location" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="Position" Type="nvarchar" MaxLength="200" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Achievement_WorkExp">
+    <End Role="WorkExp" Type="Self.WorkExp" Multiplicity="1" />
+    <End Role="Achievement" Type="Self.Achievement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkExp">
+        <PropertyRef Name="WorkExpID" />
+      </Principal>
+      <Dependent Role="Achievement">
+        <PropertyRef Name="WorkExpID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_JobDuty_WorkExp">
+    <End Role="WorkExp" Type="Self.WorkExp" Multiplicity="1" />
+    <End Role="PositionDuty" Type="Self.PositionDuty" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkExp">
+        <PropertyRef Name="WorkExpID" />
+      </Principal>
+      <Dependent Role="PositionDuty">
+        <PropertyRef Name="WorkExpID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProjectDuty_Project">
+    <End Role="Project" Type="Self.Project" Multiplicity="1" />
+    <End Role="ProjectDuty" Type="Self.ProjectDuty" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Project">
+        <PropertyRef Name="ProjectID" />
+      </Principal>
+      <Dependent Role="ProjectDuty">
+        <PropertyRef Name="ProjectID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProjectTechnique_Project">
+    <End Role="Project" Type="Self.Project" Multiplicity="1" />
+    <End Role="ProjectTechnique" Type="Self.ProjectTechnique" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Project">
+        <PropertyRef Name="ProjectID" />
+      </Principal>
+      <Dependent Role="ProjectTechnique">
+        <PropertyRef Name="ProjectID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="PersonalDemoModelStoreContainer">
+    <EntitySet Name="Achievement" EntityType="Self.Achievement" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Contact" EntityType="Self.Contact" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Education" EntityType="Self.Education" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Portfolio" EntityType="Self.Portfolio" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PositionDuty" EntityType="Self.PositionDuty" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Profile" EntityType="Self.Profile" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Project" EntityType="Self.Project" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProjectDuty" EntityType="Self.ProjectDuty" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProjectTechnique" EntityType="Self.ProjectTechnique" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Referee" EntityType="Self.Referee" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Skill" EntityType="Self.Skill" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SkillSummary" EntityType="Self.SkillSummary" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WorkExp" EntityType="Self.WorkExp" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Achievement_WorkExp" Association="Self.FK_Achievement_WorkExp">
+      <End Role="WorkExp" EntitySet="WorkExp" />
+      <End Role="Achievement" EntitySet="Achievement" />
+    </AssociationSet>
+    <AssociationSet Name="FK_JobDuty_WorkExp" Association="Self.FK_JobDuty_WorkExp">
+      <End Role="WorkExp" EntitySet="WorkExp" />
+      <End Role="PositionDuty" EntitySet="PositionDuty" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProjectDuty_Project" Association="Self.FK_ProjectDuty_Project">
+      <End Role="Project" EntitySet="Project" />
+      <End Role="ProjectDuty" EntitySet="ProjectDuty" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProjectTechnique_Project" Association="Self.FK_ProjectTechnique_Project">
+      <End Role="Project" EntitySet="Project" />
+      <End Role="ProjectTechnique" EntitySet="ProjectTechnique" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

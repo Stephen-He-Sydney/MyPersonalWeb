@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data.Entity;
 using PersonalDemo.Data.Domain;
+using System.Data.Entity.ModelConfiguration.Conventions;
 
 namespace PersonalDemo.Data
 {
@@ -29,7 +30,7 @@ namespace PersonalDemo.Data
         {
             //Configure domain classes using Fluent API here
 
-            base.OnModelCreating(modelBuilder);
+            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
         }
     }
 }

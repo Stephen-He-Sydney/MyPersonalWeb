@@ -30,6 +30,7 @@ namespace PersonalDemo.Data
         {
             //Configure domain classes using Fluent API here
 
+            base.OnModelCreating(modelBuilder);
             //Database.SetInitializer(new DropCreateDatabaseAlways<PersonalDemoContext>());
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
         }

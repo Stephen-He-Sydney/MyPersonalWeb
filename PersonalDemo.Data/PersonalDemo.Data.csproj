@@ -64,6 +64,7 @@
     <Compile Include="Domain\SkillSummary.cs" />
     <Compile Include="Domain\WorkExp.cs" />
     <Compile Include="EnumTypes\ProjectType.cs" />
+    <Compile Include="PersonalContextCustomInitializer.cs" />
     <Compile Include="PersonalDemoContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

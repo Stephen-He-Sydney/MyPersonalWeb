@@ -28,10 +28,10 @@ namespace PersonalDemo.Data
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            //Configure domain classes using Fluent API here
-
             base.OnModelCreating(modelBuilder);
             //Database.SetInitializer(new DropCreateDatabaseAlways<PersonalDemoContext>());
+
+            Database.SetInitializer(new PersonalContextCustomInitializer());
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
         }
     }

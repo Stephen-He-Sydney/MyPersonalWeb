@@ -180,7 +180,6 @@
             .mainContent .redirectPanel table td {
                 height: 50px;
                 text-align: center;
-                font-size: 18px;
             }
 
                 .mainContent .redirectPanel table td span {
@@ -196,6 +195,7 @@
             padding-right: 25px;
             display: block;
             border-radius: 10px;
+            font-size: 14px;
         }
 
             .mainContent .redirectPanel a:hover {
@@ -216,12 +216,18 @@
         width: 20%;
     }
 
+    .mainContent #workExpStyle {
+        width:100%;
+    }
+
     .mainContent #workExpStyle td {
         font-weight: bold;
+        width:100%;
+        padding-right:20px;
     }
 
     .mainContent .listStyle {
-        font-weight:normal !important;
+        font-weight: normal !important;
     }
 
 .footerContent {

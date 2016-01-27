@@ -32,13 +32,11 @@
         </tr>
         <tr>
             <td>email:</td>
-            <td>{{myProfile.Email}}</td>
+            <td class="emailStyle">{{myProfile.Email}}</td>
         </tr>
         <tr>
             <td>address:</td>
             <td>
-                <!--{{myProfile.Street}},{{myProfile.Suburb}}
-                <br />{{myProfile.State}},{{myProfile.Country}}-->
                 <ul>
                     <li>
                         {{myProfile.Street}},{{myProfile.Suburb}}
@@ -59,47 +57,61 @@
             <td>{{aSkill.SkillStatement}}</td>
         </tr>
     </table>
-    <table>
+    
+    <h3>education</h3>
+    <img src="../../Images/underline.jpg" />
+    <table id="eduDisplay">
         <tr ng-repeat="aEdu in myEduBackground">
-            <td>{{aEdu.StartDate|date:'dd/MM/yyyy'}}-</td>
+            <td>{{aEdu.StartDate|date:'dd/MM/yyyy'}}</td>
+            <td>To</td>
             <td>{{aEdu.EndDate|date:'dd/MM/yyyy'}}</td>
             <td>{{aEdu.CollegeName}}</td>
             <td>{{aEdu.Degree}}</td>
         </tr>
     </table>
-    <table ng-repeat="aProject in myProjects">
+
+    <h3>project experience</h3>
+    <img src="../../Images/underline.jpg" />
+    <table ng-repeat="aProject in myProjects" id="projectStyle">
         <tr>
-            <td>{{$index+1}}.</td>
-            <td>{{aProject.TypeName}}</td>
+            <td colspan="2">{{aProject.TypeName}}</td>
         </tr>
         <tr>
-            <td colspan="2">project name:{{aProject.Name}}</td>
+            <td>project name:</td>
+            <td>{{aProject.Name}}</td>
         </tr>
         <tr>
-            <td colspan="2">purpose:{{aProject.Purpose}}</td>
+            <td>purpose:</td>
+            <td>{{aProject.Purpose}}</td>
         </tr>
         <tr>
-            <td colspan="2">language:{{aProject.Language}}</td>
+            <td>language:</td>
+            <td>{{aProject.Language}}</td>
         </tr>
         <tr>
-            <td colspan="2">development tools:{{aProject.DevelopmentTool}}</td>
+            <td>development tools:</td>
+            <td>{{aProject.DevelopmentTool}}</td>
         </tr>
         <tr>
             <td colspan="2" ng-show="aProject.ProjectDutyList.length">
-                Project Duty:
                 <table>
+                    <tr>
+                        <td>project Duty:</td>
+                    </tr>
                     <tr ng-repeat="aDuty in aProject.ProjectDutyList">
-                        <td>{{$index+1}}{{aDuty.ListItem}}</td>
+                        <td>{{$index+1}}.{{aDuty.ListItem}}</td>
                     </tr>
                 </table>
             </td>
         </tr>
         <tr>
             <td colspan="2" ng-show="aProject.ProjectTechList.length">
-                Techniques:
                 <table>
+                    <tr>
+                        <td>Techniques:</td>
+                    </tr>
                     <tr ng-repeat="aTech in aProject.ProjectTechList">
-                        <td>{{$index+1}}{{aTech.ListItem}}</td>
+                        <td>{{$index+1}}.{{aTech.ListItem}}</td>
                     </tr>
                 </table>
             </td>

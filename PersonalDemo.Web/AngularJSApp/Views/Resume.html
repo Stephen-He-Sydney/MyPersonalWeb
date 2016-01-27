@@ -117,7 +117,10 @@
             </td>
         </tr>
     </table>
-    <table ng-repeat="aWorkExp in myWorkExps">
+
+    <h3>work experience</h3>
+    <img src="../../Images/underline.jpg" />
+    <table ng-repeat="aWorkExp in myWorkExps" id="workExpStyle">
         <tr>
             <td ng-show="aWorkExp.EndDate.length">
                 {{aWorkExp.StartDate|date:'dd/MM/yyyy'}}-{{aWorkExp.EndDate|date:'dd/MM/yyyy'}}
@@ -126,18 +129,23 @@
                 {{aWorkExp.StartDate|date:'dd/MM/yyyy'}}-present
             </td>
             <td>
+                {{aWorkExp.CorpName}},
+            </td>
+            <td>
                 {{aWorkExp.Location}}
             </td>
         </tr>
         <tr>
-            <td colspan="2">{{aWorkExp.Position}}</td>
+            <td colspan="2">position: {{aWorkExp.Position}}</td>
         </tr>
         <tr>
             <td>
-                Job duty:
-                <table>
+                <table id="jobDutyStyle">
+                    <tr>
+                        <td>job duty:</td>
+                    </tr>
                     <tr ng-repeat="aPositionDuty in aWorkExp.positionDutyList">
-                        <td>{{$index+1}}{{aPositionDuty.ListItem}}</td>
+                        <td class="listStyle">{{$index+1}}.{{aPositionDuty.ListItem}}</td>
                     </tr>
                 </table>
             </td>

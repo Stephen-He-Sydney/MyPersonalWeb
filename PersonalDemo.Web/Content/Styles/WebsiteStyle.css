@@ -120,8 +120,8 @@
 
         .mainContent .textLayout #pernalDetailID td:first-child {
             font-weight: bold;
-            font-size:14px;
-            width:30%;
+            font-size: 14px;
+            width: 30%;
         }
 
         .mainContent .textLayout td {
@@ -208,12 +208,20 @@
     }
 
     .mainContent #projectStyle tr:first-child {
-        font-weight:bold;
-        font-size:13px;
+        font-weight: bold;
+        font-size: 13px;
     }
 
-     .mainContent #projectStyle tr:not(:first-child) td:first-child {
-         width:20%;
+    .mainContent #projectStyle tr:not(:first-child) td:first-child {
+        width: 20%;
+    }
+
+    .mainContent #workExpStyle td {
+        font-weight: bold;
+    }
+
+    .mainContent .listStyle {
+        font-weight:normal !important;
     }
 
 .footerContent {

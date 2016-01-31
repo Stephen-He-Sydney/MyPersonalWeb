@@ -8,7 +8,6 @@ D:\________SourceCodes\CsharpPractice\PersonalDemo\PersonalDemo.Data\bin\Debug\E
 D:\________SourceCodes\CsharpPractice\PersonalDemo\PersonalDemo.Data\obj\Debug\PersonalDemo.Data.dll
 D:\________SourceCodes\CsharpPractice\PersonalDemo\PersonalDemo.Data\obj\Debug\PersonalDemo.Data.pdb
 D:\________SourceCodes\CsharpPractice\PersonalDemo\PersonalDemo.Data\obj\Debug\PersonalDemo.Data.csprojResolveAssemblyReference.cache
-D:\________SourceCodes\PersonalDemo\MyPersonalWeb\PersonalDemo.Data\bin\Debug\PersonalDemo.Data.dll.config
 D:\________SourceCodes\PersonalDemo\MyPersonalWeb\PersonalDemo.Data\bin\Debug\PersonalDemo.Data.dll
 D:\________SourceCodes\PersonalDemo\MyPersonalWeb\PersonalDemo.Data\bin\Debug\PersonalDemo.Data.pdb
 D:\________SourceCodes\PersonalDemo\MyPersonalWeb\PersonalDemo.Data\bin\Debug\EntityFramework.dll

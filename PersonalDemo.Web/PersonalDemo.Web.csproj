@@ -180,6 +180,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Bootstrapper.cs" />
+    <Compile Include="Cache\SqlCacheHelper.cs" />
     <Compile Include="Controllers\API\EducationDataController.cs" />
     <Compile Include="Controllers\API\ProjectDataController.cs" />
     <Compile Include="Controllers\API\SkillSumDataController.cs" />

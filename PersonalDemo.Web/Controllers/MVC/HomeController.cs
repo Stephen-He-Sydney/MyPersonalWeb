@@ -7,6 +7,7 @@ using System.Data.Entity;
 using PersonalDemo.Service.Profiles;
 using PersonalDemo.Data.Domain;
 using PersonalDemo.Web.Models.Contact;
+using PersonalDemo.Web.Cache;
 
 namespace PersonalDemo.Web.Controllers.MVC
 {
@@ -22,18 +23,28 @@ namespace PersonalDemo.Web.Controllers.MVC
         public ActionResult Index()
         {
             ContactDetailModel contactDetail = new ContactDetailModel();
+            IList<Profile> allProfile = new List<Profile>();
 
-            var allProfile = _profileService.GetAll().ToList();
+            if (HttpRuntime.Cache["profile"] != null)
+            {
+                allProfile = HttpRuntime.Cache["profile"] as List<Profile>;
+            }
+            else
+            {
+                allProfile = _profileService.GetAll().ToList();
+                SqlCacheHelper.FetchFromDb("profile", allProfile);
+            }
+
             if (allProfile.Count > 0)
             {
                 contactDetail = allProfile.Select(p => new ContactDetailModel
                 {
-                   Phone = p.Phone,
-                   Email = p.Email,
-                   Street = p.Street,
-                   Suburb = p.Suburb,
-                   State = p.State,
-                   Country = p.Country
+                    Phone = p.Phone,
+                    Email = p.Email,
+                    Street = p.Street,
+                    Suburb = p.Suburb,
+                    State = p.State,
+                    Country = p.Country
                 }).First();
             }
 

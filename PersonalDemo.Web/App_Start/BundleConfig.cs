@@ -37,7 +37,9 @@ namespace PersonalDemo.Web
                     "~/AngularJSApp/Controllers/Home/homeViewModel.js",
                     "~/AngularJSApp/Services/Home/homeService.js",
                     "~/AngularJSApp/Controllers/Resume/resumeViewModel.js",
-                    "~/AngularJSApp/Services/Resume/resumeService.js"
+                    "~/AngularJSApp/Services/Resume/resumeService.js",
+                    "~/AngularJSApp/Controllers/Portfolio/portfolioViewModel.js",
+                    "~/AngularJSApp/Controllers/Contact/contactViewModel.js"
                     ));
 
             BundleTable.EnableOptimizations = true;

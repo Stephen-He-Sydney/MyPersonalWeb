@@ -3,9 +3,9 @@
                                 $routeProvider.when('/', { templateUrl: '/AngularJSApp/Views/Home.html', controller: 'homeViewModel' });
                                 $routeProvider.when('/home', { templateUrl: '/AngularJSApp/Views/Home.html', controller: 'homeViewModel' });
                                 $routeProvider.when('/resume', { templateUrl: '/AngularJSApp/Views/Resume.html', controller: 'resumeViewModel' });
-                                $routeProvider.when('/portfolio', { templateUrl: '/AngularJSApp/Views/Portfolio.html' });
+                                $routeProvider.when('/portfolio', { templateUrl: '/AngularJSApp/Views/Portfolio.html', controller: 'portfolioViewModel' });
                                 $routeProvider.when('/blog', { templateUrl: '/AngularJSApp/Views/Blog.html' });
-                                $routeProvider.when('/contact', { templateUrl: '/AngularJSApp/Views/Contact.html' });
+                                $routeProvider.when('/contact', { templateUrl: '/AngularJSApp/Views/Contact.html', controller: 'contactViewModel' });
                                 $routeProvider.otherwise({
                                     redirectTo: '/'  //Work together with RoutConfig.cs
                                 });

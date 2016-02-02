@@ -9,4 +9,9 @@
     $scope.isActive = function (aMenu) {
         return $scope.selected === aMenu;
     }
+
+    $scope.$on('changeNavBar', function (e, obj) {
+        $scope.select(obj.status);
+        $scope.isActive(obj.status);
+    });
 }]);

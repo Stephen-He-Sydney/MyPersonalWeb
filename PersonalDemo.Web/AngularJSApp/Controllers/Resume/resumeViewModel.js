@@ -1,4 +1,7 @@
-﻿appMainModule.controller("resumeViewModel",["$scope", "resumeService", function ($scope, resumeService) {
+﻿appMainModule.controller("resumeViewModel", ["$scope", "resumeService", "$rootScope", function ($scope, resumeService, $rootScope) {
+
+    $rootScope.$broadcast("changeNavBar", { status: "resume" });
+    // emit would let parent scope only hear it
 
     resumeService.getMyProfile($scope);
 

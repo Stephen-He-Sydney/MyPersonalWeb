@@ -1,9 +1,10 @@
-﻿using System;
+﻿using System.Linq;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web;
+using PersonalDemo.Web.Cache;
 using PersonalDemo.Service.Profiles;
 using PersonalDemo.Data.Domain;
 
@@ -12,21 +13,37 @@ namespace PersonalDemo.Web.Controllers.API
     [RoutePrefix("api")]
     public class ProfileDataController : ApiController
     {
+        #region Global variable
         private IProfileService _profileService;
+        #endregion
 
+        #region Constructor injection
         public ProfileDataController(IProfileService profileService)
         {
             _profileService = profileService;
         }
+        #endregion
 
+        #region Core
         [HttpGet]
         [Route("profile")]
         public HttpResponseMessage GetProfile()
         {
-            Profile profile = _profileService.GetAll().FirstOrDefault();
-            if (profile == null) throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.NotFound));
+            IList<Profile> allProfile = new List<Profile>();
 
-            return Request.CreateResponse(HttpStatusCode.OK, profile);
+            if (HttpRuntime.Cache["Profile"] != null)
+            {
+                allProfile = HttpRuntime.Cache["Profile"] as List<Profile>;
+            }
+            else
+            {
+                allProfile = _profileService.GetAll().ToList();
+                SqlCacheHelper.FetchFromDb("Profile", allProfile);
+            }
+
+            if (allProfile.FirstOrDefault() == null) throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.NotFound));
+
+            return Request.CreateResponse(HttpStatusCode.OK, allProfile.FirstOrDefault());
         }
 
         [HttpGet]
@@ -38,5 +55,6 @@ namespace PersonalDemo.Web.Controllers.API
 
             return Request.CreateResponse(HttpStatusCode.OK, briefIntro);
         }
+        #endregion
     }
 }

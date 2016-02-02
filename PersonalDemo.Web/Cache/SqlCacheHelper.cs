@@ -10,6 +10,7 @@ namespace PersonalDemo.Web.Cache
 {
     public static class SqlCacheHelper
     {
+        #region Retrieve data from data, and initialize cache
         public static void FetchFromDb<T>(string key, IList<T> values)
         {
             SqlCacheDependency SqlDep = null;
@@ -47,5 +48,6 @@ namespace PersonalDemo.Web.Cache
                 HttpRuntime.Cache.Insert(key, values, SqlDep);
             }
         }
+        #endregion
     }
 }

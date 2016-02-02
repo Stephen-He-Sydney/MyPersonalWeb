@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using System.Data.Entity;
 using PersonalDemo.Service.Profiles;
 using PersonalDemo.Data.Domain;
 using PersonalDemo.Web.Models.Contact;
@@ -13,13 +11,18 @@ namespace PersonalDemo.Web.Controllers.MVC
 {
     public class HomeController : Controller
     {
+        #region Global variable
         private IProfileService _profileService;
+        #endregion
 
+        #region Constructor injection
         public HomeController(IProfileService profileService)
         {
             _profileService = profileService;
         }
+        #endregion
 
+        #region Core
         public ActionResult Index()
         {
             ContactDetailModel contactDetail = new ContactDetailModel();
@@ -50,5 +53,6 @@ namespace PersonalDemo.Web.Controllers.MVC
 
             return View(contactDetail);
         }
+        #endregion
     }
 }

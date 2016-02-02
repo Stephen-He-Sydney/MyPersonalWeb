@@ -4,8 +4,10 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using PersonalDemo.Data.Domain;
+using System.Web;
+using PersonalDemo.Web.Cache;
 using PersonalDemo.Data.EnumTypes;
+using PersonalDemo.Data.Domain;
 using PersonalDemo.Service.Projects;
 using PersonalDemo.Web.Models.Project;
 using PersonalDemo.Web.EnumHelpers;
@@ -15,19 +17,47 @@ namespace PersonalDemo.Web.Controllers.API
     [RoutePrefix("api")]
     public class ProjectDataController : ApiController
     {
+        #region Global variable
         private IProjectService _projectService;
+        #endregion
 
+        #region Constructor injection
         public ProjectDataController(IProjectService projectService)
         {
             _projectService = projectService;
         }
+        #endregion
 
+        #region Core
         [HttpGet]
         [Route("projects")]
         public HttpResponseMessage GetProjects()
         {
+            IList<ProjectModel> projectList = GetAllProject();
+
+            if (projectList.Count == 0) throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.NotFound));
+
+            return Request.CreateResponse(HttpStatusCode.OK, projectList);
+        }
+        #endregion
+
+        #region Support functions
+        [NonAction]
+        private List<ProjectModel> GetAllProject()
+        {
             List<ProjectModel> projectList = new List<ProjectModel>();
-            var projects = _projectService.GetAllWithSubTables().ToList();
+
+            IList<Project> projects = new List<Project>();
+
+            if (HttpRuntime.Cache["Project"] != null)
+            {
+                projects = HttpRuntime.Cache["Project"] as List<Project>;
+            }
+            else
+            {
+                projects = _projectService.GetAllWithSubTables().ToList();
+                SqlCacheHelper.FetchFromDb("Project", projects);
+            }
 
             foreach (var aProject in projects)
             {
@@ -56,9 +86,8 @@ namespace PersonalDemo.Web.Controllers.API
                 projectList.Add(projectModel);
             }
 
-            if (projectList.Count == 0) throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.NotFound));
-
-            return Request.CreateResponse(HttpStatusCode.OK, projectList);
+            return projectList;
         }
+        #endregion
     }
 }

@@ -10,7 +10,6 @@ D:\________SourceCodes\CsharpPractice\PersonalDemo\PersonalDemo.Repository\bin\D
 D:\________SourceCodes\CsharpPractice\PersonalDemo\PersonalDemo.Repository\obj\Debug\PersonalDemo.Repository.csprojResolveAssemblyReference.cache
 D:\________SourceCodes\CsharpPractice\PersonalDemo\PersonalDemo.Repository\obj\Debug\PersonalDemo.Repository.dll
 D:\________SourceCodes\CsharpPractice\PersonalDemo\PersonalDemo.Repository\obj\Debug\PersonalDemo.Repository.pdb
-D:\________SourceCodes\PersonalDemo\MyPersonalWeb\PersonalDemo.Repository\bin\Debug\PersonalDemo.Repository.dll.config
 D:\________SourceCodes\PersonalDemo\MyPersonalWeb\PersonalDemo.Repository\bin\Debug\PersonalDemo.Repository.dll
 D:\________SourceCodes\PersonalDemo\MyPersonalWeb\PersonalDemo.Repository\bin\Debug\PersonalDemo.Repository.pdb
 D:\________SourceCodes\PersonalDemo\MyPersonalWeb\PersonalDemo.Repository\bin\Debug\EntityFramework.dll

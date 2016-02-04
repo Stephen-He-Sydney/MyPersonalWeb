@@ -14,5 +14,6 @@ D:\________SourceCodes\PersonalDemo\MyPersonalWeb\PersonalDemo.Data\bin\Debug\En
 D:\________SourceCodes\PersonalDemo\MyPersonalWeb\PersonalDemo.Data\bin\Debug\EntityFramework.SqlServer.dll
 D:\________SourceCodes\PersonalDemo\MyPersonalWeb\PersonalDemo.Data\bin\Debug\EntityFramework.xml
 D:\________SourceCodes\PersonalDemo\MyPersonalWeb\PersonalDemo.Data\bin\Debug\EntityFramework.SqlServer.xml
+D:\________SourceCodes\PersonalDemo\MyPersonalWeb\PersonalDemo.Data\obj\Debug\PersonalDemo.Data.csprojResolveAssemblyReference.cache
 D:\________SourceCodes\PersonalDemo\MyPersonalWeb\PersonalDemo.Data\obj\Debug\PersonalDemo.Data.dll
 D:\________SourceCodes\PersonalDemo\MyPersonalWeb\PersonalDemo.Data\obj\Debug\PersonalDemo.Data.pdb

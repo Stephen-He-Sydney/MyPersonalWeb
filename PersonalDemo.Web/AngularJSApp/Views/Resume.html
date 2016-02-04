@@ -1,0 +1,155 @@
+﻿<div class="textLayout">
+    <h3>personal details</h3>
+    <img src="../../Images/underline.jpg" />
+    <table id="pernalDetailID">
+        <tr>
+            <td>name:</td>
+            <td>{{myProfile.Name}}</td>
+        </tr>
+        <tr>
+            <td>visa status:</td>
+            <td>{{myProfile.VisaStatus}}</td>
+        </tr>
+        <tr>
+            <td>occupation:</td>
+            <td>{{myProfile.Occupation}}</td>
+        </tr>
+        <tr>
+            <td>degree:</td>
+            <td>{{myProfile.Degree}}</td>
+        </tr>
+        <tr>
+            <td>certificate:</td>
+            <td>{{myProfile.Certificate}}</td>
+        </tr>
+        <tr>
+            <td>english level:</td>
+            <td>{{myProfile.EnglishLevel}}</td>
+        </tr>
+        <tr>
+            <td>phone:</td>
+            <td>{{myProfile.Phone}}</td>
+        </tr>
+        <tr>
+            <td>email:</td>
+            <td class="emailStyle">{{myProfile.Email}}</td>
+        </tr>
+        <tr>
+            <td>address:</td>
+            <td>
+                <ul>
+                    <li>
+                        {{myProfile.Street}},{{myProfile.Suburb}}
+                    </li>
+                    <li>
+                        {{myProfile.State}},{{myProfile.Country}}
+                    </li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+
+    <h3>IT skills</h3>
+    <img src="../../Images/underline.jpg" />
+    <table>
+        <tr ng-repeat="aSkill in mySkillSummary">
+            <td>{{$index+1}}.</td>
+            <td>{{aSkill.SkillStatement}}</td>
+        </tr>
+    </table>
+    
+    <h3>education</h3>
+    <img src="../../Images/underline.jpg" />
+    <table id="eduDisplay">
+        <tr ng-repeat="aEdu in myEduBackground">
+            <td>{{aEdu.StartDate|date:'dd/MM/yyyy'}}</td>
+            <td>To</td>
+            <td>{{aEdu.EndDate|date:'dd/MM/yyyy'}}</td>
+            <td>{{aEdu.CollegeName}}</td>
+            <td>{{aEdu.Degree}}</td>
+        </tr>
+    </table>
+
+    <h3>project experience</h3>
+    <img src="../../Images/underline.jpg" />
+    <table ng-repeat="aProject in myProjects" id="projectStyle">
+        <tr>
+            <td colspan="2">{{aProject.TypeName}}</td>
+        </tr>
+        <tr>
+            <td>project name:</td>
+            <td>{{aProject.Name}}</td>
+        </tr>
+        <tr>
+            <td>purpose:</td>
+            <td>{{aProject.Purpose}}</td>
+        </tr>
+        <tr>
+            <td>language:</td>
+            <td>{{aProject.Language}}</td>
+        </tr>
+        <tr>
+            <td>development tools:</td>
+            <td>{{aProject.DevelopmentTool}}</td>
+        </tr>
+        <tr>
+            <td colspan="2" ng-show="aProject.ProjectDutyList.length">
+                <table>
+                    <tr>
+                        <td>project Duty:</td>
+                    </tr>
+                    <tr ng-repeat="aDuty in aProject.ProjectDutyList">
+                        <td>{{$index+1}}.{{aDuty.ListItem}}</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" ng-show="aProject.ProjectTechList.length">
+                <table>
+                    <tr>
+                        <td>Techniques:</td>
+                    </tr>
+                    <tr ng-repeat="aTech in aProject.ProjectTechList">
+                        <td>{{$index+1}}.{{aTech.ListItem}}</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+    <h3>work experience</h3>
+    <img src="../../Images/underline.jpg" />
+    <table ng-repeat="aWorkExp in myWorkExps" id="workExpStyle">
+        <tr>
+            <td ng-show="aWorkExp.EndDate.length">
+                {{aWorkExp.StartDate|date:'dd/MM/yyyy'}}-{{aWorkExp.EndDate|date:'dd/MM/yyyy'}}
+            </td>
+            <td ng-show="!aWorkExp.EndDate.length">
+                {{aWorkExp.StartDate|date:'dd/MM/yyyy'}}-present
+            </td>
+            <td>
+                {{aWorkExp.CorpName}},
+            </td>
+            <td>
+                {{aWorkExp.Location}}
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">position: {{aWorkExp.Position}}</td>
+        </tr>
+        <tr>
+            <td>
+                <table id="jobDutyStyle">
+                    <tr>
+                        <td>job duty:</td>
+                    </tr>
+                    <tr ng-repeat="aPositionDuty in aWorkExp.positionDutyList">
+                        <td class="listStyle">{{$index+1}}.{{aPositionDuty.ListItem}}</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</div>
+

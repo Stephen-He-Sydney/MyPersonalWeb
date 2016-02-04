@@ -1,0 +1,278 @@
+﻿html, body {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.tableContainer, .footerStyle {
+    display: table;
+    position: relative;
+    width: 100%;
+    background-color: #414141;
+    vertical-align: middle;
+    table-layout: fixed;
+}
+
+.tableContainer {
+    padding-bottom: 30px;
+}
+
+.content {
+    display: table-cell;
+    margin-left: auto;
+    margin-right: auto;
+    background: url(/Images/bg.jpg) no-repeat top;
+}
+
+    .content .menuLayout {
+        background: url(/Images/navBar.jpg) no-repeat top;
+        /*background-color:blue;*/
+        width: 720px;
+        height: 65px;
+        margin: 0 auto;
+        margin-top: 230px;
+    }
+
+        .content .menuLayout li {
+            display: inline;
+            /*background-color:yellow;*/
+            margin-left: -8px;
+            float: left;
+            line-height: 3.5em;
+        }
+
+            .content .menuLayout li a {
+                text-decoration: none;
+                padding-top: 8px;
+                display: inline;
+                float: left;
+                padding-left: 37px;
+                padding-right: 37px;
+                min-width: 30px;
+                font-size: 16px;
+                font-weight: bolder;
+                color: white;
+                text-transform: uppercase;
+            }
+
+                .content .menuLayout li a:hover, .activedBar {
+                    background: url(/Images/hover.jpg) no-repeat center;
+                    height: 66px;
+                    float: left;
+                    color: #FFF58B !important;
+                    font-weight: bolder;
+                }
+
+.mainContent {
+    background-color: #E9E9E9;
+    width: 715px;
+    min-height: 800px;
+    height: auto;
+    margin: 0 auto;
+    margin-top: 40px;
+    color: #333333;
+    border-radius: 10px;
+}
+
+    .mainContent h3, img {
+        clear: both;
+        float: left;
+    }
+
+    .mainContent h3 {
+        margin-top: 35px;
+        /*margin-left: 30px;*/
+        font-family: 'Lucida Bright', Georgia, serif;
+        font-size: 25px;
+        font-weight: bolder;
+        text-transform: capitalize;
+    }
+
+    .mainContent img {
+        margin-left: -12px;
+        margin-top: -10px;
+    }
+
+    .mainContent .textLayout, .selfIntroStyle, .testimonialsStyle {
+        clear: both;
+        float: left;
+        padding-top: 10px;
+        margin-left: 31px;
+        line-height: 2em;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 12px; /*14px;*/
+    }
+
+        .mainContent table, .selfIntroStyle p {
+            clear: both;
+            float: left;
+            margin-top: 20px;
+        }
+
+    .mainContent .textLayout {
+        height: 700px;
+    }
+
+    .mainContent .textLayout, .testimonialsStyle {
+        margin-right: 30px;
+        overflow-y: auto;
+    }
+
+        .mainContent .textLayout #pernalDetailID td:first-child {
+            font-weight: bold;
+            font-size: 14px;
+            width: 30%;
+        }
+
+        .mainContent .textLayout td {
+            height: 40px;
+        }
+
+    .mainContent td:not(.emailStyle):first-letter {
+        text-transform: uppercase;
+    }
+
+    .mainContent .textLayout td ul {
+        list-style: none;
+        clear: both;
+        float: left;
+        margin-top: 20px;
+        margin-left: -40px;
+    }
+
+        .mainContent .textLayout td ul li {
+            line-height: 1.5em;
+            /*background-color:yellow;*/
+        }
+
+    .mainContent .testimonialsStyle table {
+        clear: both;
+        margin-top: 10px;
+    }
+
+    .mainContent .testimonialsStyle {
+        height: 370px;
+    }
+
+    .mainContent .selfIntroStyle {
+        float: left;
+        width: 60%;
+        height: auto;
+        /*background-color: green;*/
+        padding-bottom: 30px;
+    }
+
+    .mainContent .redirectPanel {
+        font-weight: bolder;
+        margin-right: 30px;
+        float: right;
+        width: 30%;
+        height: auto;
+        padding-left: 40px;
+        /*background-color: red;*/
+    }
+
+        .mainContent .redirectPanel table {
+            margin: 0 auto;
+            margin-top: 33px;
+        }
+
+            .mainContent .redirectPanel table td {
+                height: 50px;
+                text-align: center;
+            }
+
+                .mainContent .redirectPanel table td span {
+                    font-family: 'Lucida Bright', Georgia, serif;
+                }
+
+        .mainContent .redirectPanel a {
+            color: white;
+            background: url(/Images/navBar.jpg) no-repeat top;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            padding-left: 25px;
+            padding-right: 25px;
+            display: block;
+            border-radius: 10px;
+            font-size: 14px;
+        }
+
+            .mainContent .redirectPanel a:hover {
+                text-decoration: none;
+                color: #FFF58B;
+            }
+
+    .mainContent #eduDisplay td {
+        padding-right: 15px;
+    }
+
+    .mainContent #projectStyle tr:first-child {
+        font-weight: bold;
+        font-size: 13px;
+    }
+
+    .mainContent #projectStyle tr:not(:first-child) td:first-child {
+        width: 20%;
+    }
+
+    .mainContent #workExpStyle {
+        width:100%;
+    }
+
+    .mainContent #workExpStyle td {
+        font-weight: bold;
+        width:100%;
+        padding-right:20px;
+    }
+
+    .mainContent .listStyle {
+        font-weight: normal !important;
+    }
+
+.footerContent {
+    display: table-cell;
+    margin-left: auto;
+    margin-right: auto;
+    color: #FFFFFF;
+    /*text-align: center;*/
+    text-transform: capitalize;
+    font-weight: bolder;
+}
+
+    .footerContent div {
+        background: url(/Images/footer.jpg) no-repeat top;
+        width: 860px;
+        height: 300px;
+        margin: 0 auto;
+        /*padding-left: 25px;*/
+    }
+
+        .footerContent div .footSubContent {
+            float: left;
+            width: 25%;
+            height: 90%;
+            padding-left: 20px;
+        }
+
+            .footerContent div .footSubContent p {
+                font-family: 'Lucida Bright',Georgia,serif;
+                padding-top: 20px;
+                font-size: 20px;
+            }
+
+            .footerContent div .footSubContent table td {
+                font-size: 12.5px;
+                height: 45px;
+                color: #F8F8F8;
+            }
+
+            .footerContent div .footSubContent table .emailStyle {
+                text-transform: lowercase;
+            }
+
+            .footerContent div .footSubContent a {
+                font-weight: bolder;
+                font-size: 14px;
+                color: #FFF58B;
+            }
